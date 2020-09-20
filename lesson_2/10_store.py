@@ -34,29 +34,50 @@ store = {
 # Рассчитать на какую сумму лежит каждого товара на складе
 # например для ламп
 
-lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
-# или проще (/сложнее ?)
-lamp_code = goods['Лампа']
-lamps_item = store[lamp_code][0]
-lamps_quantity = lamps_item['quantity']
-lamps_price = lamps_item['price']
-lamps_cost = lamps_quantity * lamps_price
-print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
+lampa_quantity = store[goods['Лампа']][0]['quantity']
+lampa_cost = lampa_quantity * store[goods['Лампа']][0]['price']
+
+table_quantity_1 = store[goods['Стол']][0]['quantity']
+table_quantity_2 = store[goods['Стол']][1]['quantity']
+all_table_quantity = table_quantity_1 + table_quantity_2
+table_cost_1 = table_quantity_1 * store[goods['Стол']][0]['price']
+table_cost_2 = table_quantity_2 * store[goods['Стол']][1]['price']
+all_table_cost = table_cost_1 + table_cost_2
+
+sofa_quantity_1 = store[goods['Диван']][0]['quantity']
+sofa_quantity_2 = store[goods['Диван']][1]['quantity']
+all_sofa_quantity = sofa_quantity_1 + sofa_quantity_2
+sofa_cost_1 = store[goods['Диван']][0]['price'] * sofa_quantity_1
+sofa_cost_2 = store[goods['Диван']][1]['price'] * sofa_quantity_2
+all_sofa_cost = sofa_cost_1 + sofa_cost_2
+
+chair_quantity_1 = store[goods['Стул']][0]['quantity']
+chair_quantity_2 = store[goods['Стул']][1]['quantity']
+chair_quantity_3 = store[goods['Стул']][2]['quantity']
+all_chair_quantity = chair_quantity_1 + chair_quantity_2 + chair_quantity_3
+chair_cost_1 = store[goods['Стул']][0]['price'] * chair_quantity_1
+chair_cost_2 = store[goods['Стул']][1]['price'] * chair_quantity_2
+chair_cost_3 = store[goods['Стул']][2]['price'] * chair_quantity_3
+all_chair_cost = chair_cost_1 + chair_cost_2 + chair_cost_3
+
+print(f'Лампа - {lampa_quantity} шт, стоимость {lampa_cost} руб\n'
+      f'Стол - {all_table_quantity} шт, стоимость {all_table_cost} руб\n'
+      f'Диван - {all_sofa_quantity} шт, стоимость {all_sofa_cost} руб\n'
+      f'Стул - {all_chair_quantity} шт, стоимость {all_chair_cost} руб')
+#lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+
+# # или проще (/сложнее ?)
+# lamp_code = goods['Лампа']
+# lamps_item = store[lamp_code][0]
+# lamps_quantity = lamps_item['quantity']
+# lamps_price = lamps_item['price']
+# lamps_cost = lamps_quantity * lamps_price
+# print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
 
 # Вывести стоимость каждого товара на складе: один раз распечать сколько всего столов, стульев и т.д. на складе
 # Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
 
-# WARNING для знающих циклы: БЕЗ циклов. Да, с переменными; да, неэффективно; да, копипаста.
-# Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
 
-# TODO здесь ваш код
-
-##########################################################################################
-# ВНИМАНИЕ! После того как __ВСЯ__ домашняя работа сделана и запушена на сервер,         #
-# нужно зайти в ЛМС (LMS - Learning Management System ) по адресу http://go.skillbox.ru  #
-# и оформить попытку сдачи ДЗ! Без этого ДЗ не будет проверяться!                        #
-# Как оформить попытку сдачи смотрите видео - https://youtu.be/qVpN0L-C3LU               #
-##########################################################################################
 
 
 
